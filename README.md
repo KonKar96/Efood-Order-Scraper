@@ -6,4 +6,10 @@ We can get the sum of all-time orders, money spent, year-month-hour frequency
 
 You should enter your efood credentials at the appropriate lines, the code for gaccount login and facebook is incomplete so dont use it
 
-Last thing, download the appropriate version of chrome webdriver into the same folder as the script and install selenium with ( pip install selenium )
+For the setup, download the appropriate version of chrome webdriver into the same folder as the script and install selenium with ( pip install selenium )
+
+You can run the script with chrome open, or headless by removing the comment from line 21
+
+
+![image](https://user-images.githubusercontent.com/25888398/128166949-ada919d3-5ad9-4801-acc3-487b9c4799de.png)
+
