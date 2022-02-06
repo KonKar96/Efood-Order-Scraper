@@ -22,8 +22,8 @@ import datetime
 import csv
 import math
 
-EMAIL = "dnkar1996@gmail.com"
-PASSWORD = "apostolis"
+EMAIL = ""
+PASSWORD = ""
 
 
 def sleep(x):
