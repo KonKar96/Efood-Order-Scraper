@@ -67,8 +67,8 @@ def find(xpath, mode=None):
 
 
 def telegram_bot_sendtext(bot_message):
-    bot_token = "871715863:AAGynJz0g8IT3bDKZZBtnXLL35ojVj0z6iA"
-    bot_chatID = "787048928"
+    bot_token = 
+    bot_chatID = 
     send_text = (
         "https://api.telegram.org/bot"
         + bot_token
