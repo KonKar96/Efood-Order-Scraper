@@ -1,29 +1,18 @@
-from enum import unique
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver import ActionChains
-from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
 from selenium.common import exceptions
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import sys
-import json
-import pickle
 import requests
-import discord
-import textwrap
 import datetime
-import csv
-import math
 
-EMAIL = ""
-PASSWORD = ""
+
+args = sys.argv
+EMAIL = args[1]
+PASSWORD = args[2]
 
 
 def sleep(x):
@@ -44,7 +33,7 @@ def find(xpath, mode=None):
     while True:
         try:
             element = WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.XPATH, xpath))
+                EC.visibility_of_element_located((By.XPATH, xpath))
             )
             if mode == "click":
                 WebDriverWait(driver, 5).until(
@@ -52,33 +41,11 @@ def find(xpath, mode=None):
                 )
             element.location_once_scrolled_into_view
             return element
-        except (
-            exceptions.StaleElementReferenceException,
-            exceptions.ElementClickInterceptedException,
-            exceptions.ElementNotInteractableException,
-            exceptions.TimeoutException,
-            AttributeError,
-            UnboundLocalError,
-        ):
+        except Exception as e:
             tries += 1
             if tries > 10:
                 return None
             pass
-
-
-def telegram_bot_sendtext(bot_message):
-    bot_token = 
-    bot_chatID = 
-    send_text = (
-        "https://api.telegram.org/bot"
-        + bot_token
-        + "/sendMessage?chat_id="
-        + bot_chatID
-        + "&parse_mode=Markdown&text="
-        + bot_message
-    )
-    response = requests.get(send_text)
-    return response.json()
 
 
 def login(driver):
@@ -140,7 +107,6 @@ def get_orders(driver):
             except ValueError:
                 continue
 
-    # print("Found " + str(len(ids)) + " orders")
     max_val = max(prices)
     print(
         f"""Total Orders: {str(len(prices))}
