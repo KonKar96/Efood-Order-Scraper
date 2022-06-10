@@ -1,5 +1,6 @@
 # Efood Order Scraper
 
+(This is an old deprecated version as efood changed its UI, a new scraper using efood's api is coming)
 Hi! This is a small python script to give you an idea of how many orders you made and how much did you spent on [efood.gr](https://www.e-food.gr/).
 
 Efood order scraper is based on selenium automation framework
