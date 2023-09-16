@@ -1,4 +1,4 @@
-## (This is an old deprecated version as efood changed its UI, a new scraper using efood's api is coming)
+## (This is an old deprecated version as efood changed its UI)
 
 
 # Efood Order Scraper
